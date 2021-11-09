@@ -21,7 +21,7 @@ namespace ProAtividade.API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Descrição")
+                    b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Prioridade")

@@ -8,7 +8,7 @@ using ProAtividade.API.Data;
 namespace ProAtividade.API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211108164427_initial")]
+    [Migration("20211109010724_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace ProAtividade.API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Descrição")
+                    b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Prioridade")
