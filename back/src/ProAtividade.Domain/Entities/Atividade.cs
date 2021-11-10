@@ -1,0 +1,35 @@
+﻿using System;
+
+namespace ProAtividade.Domain.Entities
+{
+    public class Atividade
+    {
+        public int Id { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public DateTime? DataConclusao { get; set; }
+        public Prioridade Prioridade { get; set; }
+
+        public Atividade()
+        {
+            DataCriacao = DateTime.Now;
+            DataConclusao = null;
+        }
+
+        public Atividade(int id, string descricao, string titulo) : this()
+        {
+            Id = id;
+            Descricao = descricao;
+            Titulo = titulo;
+        }
+
+        public void Concluir()
+        {
+            if (DataConclusao is null)
+                DataConclusao = DateTime.Now;
+            else
+                throw new Exception($"Atividade já concluída em: {DataConclusao?.ToString("dd/MM/yyyy hh:mm")}");
+        }
+    }
+}
